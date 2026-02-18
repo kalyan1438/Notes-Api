@@ -37,5 +37,19 @@ export const deleteNote = (id)=>{
     if(idx === -1) return  false;
     notes.splice(idx,1);
     return true;
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//hellohello
