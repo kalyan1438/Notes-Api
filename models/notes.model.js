@@ -4,13 +4,7 @@ const notes = [{
     content:"Sample Content",
     createdAt: new Date().toISOString(),
 }]
-const temp = {
-    id:1,
-    name:"Day8",
-    title:"MongoDb Basics",
-    content:"MongoDb is noSQL database system ",
-    time: new Date().toISOString(),
-}
+
 export const createNote = (title,content)=>{
     if(!title || !content){
         return null;
