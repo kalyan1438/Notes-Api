@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 
-const connectionString =
-  "mongodb+srv://21Backend:Kalyan%401438@21backend.hvextm3.mongodb.net/?appName=21Backend";
+const connectionString ="";
 
 export const connectDB = async () => {
   try {
