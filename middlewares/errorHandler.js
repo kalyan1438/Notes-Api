@@ -1,10 +1,22 @@
 export const errorHandler = (err, req, res, next) => {
-  console.error("Error:", err.message);
+  console.error(err.message);
 
-  const statusCode = err.status || 500;
+  if (err.name === "ValidationError") {
+    return res.status(400).json({
+      success: false,
+      message: err.message
+    });
+  }
 
-  res.status(statusCode).json({
+  if (err.name === "CastError") {
+    return res.status(400).json({
+      success: false,
+      message: "Invalid ID format"
+    });
+  }
+
+  res.status(500).json({
     success: false,
-    message: err.message || "Internal Server Error"
+    message: "Internal Server Error"
   });
 };
