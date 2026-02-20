@@ -1,7 +1,7 @@
 import express, { json } from "express";
 import router from "./routes/notes.route.js";
 import { connectDB } from "./config/db.js";
-connectDB();
+connectDB(); //
 const app = express();
 app.use(express.json());
 app.use("/notes",router);
