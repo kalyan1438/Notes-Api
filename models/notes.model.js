@@ -13,7 +13,7 @@ const noteSchema = new mongoose.Schema(
       required: [true, "Content is required"],
       maxlength: [500, "Content cannot exceed 500 characters"]
     },
-    isPinned: {//
+    isPinned: {
       type: Boolean,
       default: false
     }
