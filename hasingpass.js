@@ -7,3 +7,4 @@ const hasing = async ()=>{
     const res = await bcrypt.compare(password,hashedPassword);
     if(res) console.log("Password Matched");
 }
+hasing();
