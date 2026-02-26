@@ -1,22 +1,26 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
-
-import connectDB from "./config/db.js";
-import authRoutes from "./routes/authRoutes.js";
-import noteRoutes from "./routes/noteRoutes.js";
-
+import helmet from "helmet";
+import rateLimit from "express-rate-limit";
+import xss from "xss-clean"
 dotenv.config();
-
-connectDB();
 
 const app = express();
 
-app.use(cors());
+app.use(cors(),{
+    origin:"http://localhost:3000",
+    method:["GET","POST"],
+    credentials:true
+});
+app.use(helmet());
+app.use(rateLimit({
+    windowMs: 15*60*1000,
+    max:100,
+    message:"to mant request, try again later",
+}))
+app.use(xss())
 app.use(express.json());
-
-app.use("/api/auth", authRoutes);
-app.use("/api/notes", noteRoutes);
 
 app.get("/", (req, res) => {
     res.json({ message: "API Running..." });
