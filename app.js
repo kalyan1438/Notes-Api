@@ -1,6 +1,6 @@
 import express from "express";
 const app = express();
-app.get("/notes/:id",(req,res)=>{
+app.get("/notes/:user/:id",(req,res)=>{
     res.json({
         userId:req.params.id,
         title:"Task 1",
