@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: notes-api
+    env: node
+    branch: main
+    buildCommand: npm install
+    startCommand: node app.js
+    plan: free
+    autoDeploy: true
