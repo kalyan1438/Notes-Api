@@ -1,5 +1,5 @@
 import Note from "../models/Note.js";
-
+import logger from "../middlewares/logger.js";
 export const createNote = async (req, res) => {
     try {
         const { title, content } = req.body;
@@ -18,6 +18,8 @@ export const createNote = async (req, res) => {
 
     } catch (error) {
         res.status(500).json({ message: error.message });
+        logger.error("Error");
+        
     }
 };
 
