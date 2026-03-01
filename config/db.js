@@ -6,7 +6,7 @@ const connectDB = async () => {
     }
     catch(e){ // catch block 
       console.log("Failed to Connect",e.message);
-      process.exit(1);
+      process.exit(1); //processs 
     }
 }
 export default connectDB;
