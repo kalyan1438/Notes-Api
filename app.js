@@ -11,7 +11,7 @@ app.get("/Notes",(req,res)=>{
 })//
 app.get("/deploy",(req,res)=>{
     res.send("<h1> Deployed on Render</h1>");
-});
+});//
 app.get("/:name",(req,res)=>{
     const name = req.params.name;
     res.send(`<h1>Erri Pukka ${name}</h1>`);
