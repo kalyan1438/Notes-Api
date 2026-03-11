@@ -8,7 +8,7 @@ const app = express();
 app.use(morgan("dev"));
 app.get("/Notes",(req,res)=>{
     res.send("Notes Api");
-})
+})//
 app.get("/deploy",(req,res)=>{
     res.send("<h1> Deployed on Render</h1>");
 });
